@@ -2,15 +2,21 @@
   "manifest_version": 2,
 
   "name": "OneClick",
-  "description": "This extension shows a Google Image search result for the current page",
+  "description": "This extension converts youtube to mp3 and downloads with a single click",
   "version": "1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
+
+  "content_scripts": [{
+    "css": ["style.css"],
+    "js": ["content.js"],
+    "matches": ["https://www.youtube.com/*"]
+  }],
+
   "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
+    "activeTab"
   ]
 }
